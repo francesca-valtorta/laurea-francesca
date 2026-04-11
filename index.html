@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>System Log</title>
+<style>
+  body {
+    background-color: black;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="terminal"></div>
+
+<script>
+const lines = [
+"> initializing system...",
+"> loading data...",
+"> student: Francesca",
+"> degree: Informatica",
+"> execution time: years",
+"> processing...",
+">",
+"> RESULT: SUCCESS ✔",
+">",
+"> printf(\"Grazie per esserci stati ❤️\");"
+];
+
+let i = 0;
+function typeLine() {
+  if (i < lines.length) {
+    document.getElementById("terminal").innerHTML += lines[i] + "<br>";
+    i++;
+    setTimeout(typeLine, 700);
+  }
+}
+typeLine();
+</script>
+
+</body>
+</html>
