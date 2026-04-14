@@ -1,3 +1,4 @@
+fai le modifiche per il cursore:
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -13,23 +14,11 @@
     line-height: 1.6;
     cursor: default;
   }
-
-  #cursor {
-    display: inline-block;
-    margin-left: 5px;
-    animation: blink 1s infinite;
-  }
-
-  @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-  }
 </style>
 </head>
 <body>
 
-<div id="terminal"></div><span id="cursor">█</span>
+<div id="terminal"></div>
 
 <script>
 const lines = [
@@ -48,22 +37,17 @@ const lines = [
 "> status: completed",
 ">",
 ">",
-"> printf(\"Grazie per esserci stati ❤️\");"
+"> printf(\"Grazie per esserci stati❤️\");"
 ];
 
 let i = 0;
-const terminal = document.getElementById("terminal");
-const cursor = document.getElementById("cursor");
-
 function typeLine() {
   if (i < lines.length) {
-    terminal.innerHTML += lines[i] + "<br>";
+    document.getElementById("terminal").innerHTML += lines[i] + "<br>";
     i++;
-    terminal.appendChild(cursor);
     setTimeout(typeLine, 700);
   }
 }
-
 typeLine();
 </script>
 
